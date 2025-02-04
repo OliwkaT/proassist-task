@@ -1,8 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## Introduction
+
+This is a blog application built with **Next.js 15**, **React 19**, and **TypeScript**. The application displays a list of blog posts, allows filtering based on categories and favorite status, and provides detailed views for each post. Users can add or remove posts from their favorites, with favorites stored locally in the browser (using `localStorage`). The app is designed to be responsive and functional on both desktop and mobile devices.
+
+The blog's layout and styling were based on the provided design in Figma.
+
+## Features
+
+- **Homepage**: Displays a list of posts fetched from a public API. Each post includes:
+  - Title
+  - Short Description
+  - "See More" button
+- **Post Detail Page**: Displays the full content of a post. Includes:
+  - A "Back to Posts" button to return to the list of posts.
+  - An "Add to Favorites" button to add/remove the post from favorites.
+- **Filtering**: Users can filter posts on the homepage by category and by whether they are added to favorites.
+- **Favorites**: Users can add/remove posts from the favorites list. The list is stored in `localStorage` for persistence.
+- **Responsiveness**: The application works on both desktop and mobile devices.
+
+## Technologies Used
+
+- **Next.js 15**: React framework for server-side rendering and static site generation.
+- **React 19**: Frontend JavaScript library.
+- **TypeScript**: Type-safe JavaScript.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- **Node.js**: Ensure that you have Node.js installed. If not, [download and install Node.js](https://nodejs.org/).
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-repo/proassist-task.git
+   cd proassist-task
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+### Running the Development Server
+
+To start the development server, run one of the following commands:
 
 ```bash
 npm run dev
@@ -14,27 +64,21 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the server at `http://localhost:3000`.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Testing the Application
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Open your browser and visit `http://localhost:3000` to see the result.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## API
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The app uses the following public API endpoints from JSONPlaceholder:
 
-## Learn More
+- `/posts`: To fetch the list of posts.
+- `/posts/{id}`: To fetch details of a specific post.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- The application uses **localStorage** to persist the list of favorites between sessions.
+- For responsive design, **media queries** and **styled-components** are used.
